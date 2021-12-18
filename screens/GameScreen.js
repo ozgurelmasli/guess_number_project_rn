@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Alert,
   FlatList,
+  Dimensions
 } from "react-native";
 import NumberContainer from "../components/NumberContainer";
 import Card from "../components/Card";
@@ -116,13 +117,13 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: "row",
     justifyContent: "space-around",
-    marginTop: 20,
+    marginTop: Dimensions.get('window').height > 600 ? 50 : 20,
     width: 300,
     maxWidth: "80%",
   },
   listContainer: {
     flex: 1, // android scoll view action
-    width: "80%",
+    width: Dimensions.get('window').width > 500 ? "60%" : "80%",
   },
   list: {
     flexGrow: 1, // scroll view behavior
